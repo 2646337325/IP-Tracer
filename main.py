@@ -38,16 +38,19 @@ if __name__ == '__main__':
 
         if resultado:
             print(Fore.BLUE + '\nInformações sobre o endereço IP:')
-            print(Fore.GREEN + 'IP:', resultado['ip'])
+            print(Fore.GREEN + '\nIP:', resultado['ip'])
             print(Fore.GREEN + 'Hostname:', resultado['hostname'])
             print(Fore.GREEN + 'Cidade:', resultado['city'])
             print(Fore.GREEN + 'Região:', resultado['region'])
             print(Fore.GREEN + 'País:', resultado['country'])
             print(Fore.GREEN + 'Provedor de serviços de Internet (ISP):', resultado['org'])
+
+            location = resultado['loc'].split(',')
+            latitude = location[0]
+            longitude = location[1]
+            print(Fore.GREEN + f'Latitude: {latitude}')
+            print(Fore.GREEN + f'Longitude: {longitude}')
             print()
         else:
             print(Fore.RED + 'Erro ao obter informações do endereço IP.')
             print(Style.RESET_ALL)
-
-
-
